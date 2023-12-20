@@ -1,0 +1,123 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+    --purple: hsl(280, 84%, 46%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--light-pink);
+    min-width: 280px;
+
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    padding: 20px;
+    height: 100vh;
+    background-image: url("./images/background-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 520px;
+    max-height: 90vh;
+    background-color: var(--white);
+
+    overflow: auto;
+}
+
+.faq__title {
+    color: var(--dark-purple);
+}
+
+.faq__title::before {
+    content: url("./images/icon-star.svg");
+
+    display: inline-block;
+    zoom: 0.6;
+
+    margin-right: 25px;
+
+    vertical-align: middle;
+}
+
+.faq__question-container {
+    font-weight: 600;
+    color: var(--dark-purple);
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq__details[open] .faq__question {
+    margin-bottom: 25px;
+}
+
+.faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.faq__question:hover {
+    color: var(--purple);
+}
+
+.faq__question-container:focus-visible {
+    color: var(--purple);
+}
+
+.faq__answer {
+    font-size: 14px;
+    color: var(--grayish-purple);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 376px) {
+    .faq__title {
+        font-size: 3em;
+    }
+
+    .faq__title::before {
+        zoom: 0.8;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        background-image: url("./images/background-pattern-mobile.svg");
+    }
+}
